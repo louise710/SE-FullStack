@@ -1,4 +1,4 @@
 # SE-FullStack
-
-
-i added register page
+Louise: added sessions, mysql database connection setup with pdo 
+Jeofele: added user registration interface with html form elements
+Clarence: implemented frontend login inteface

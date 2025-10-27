@@ -3,119 +3,134 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smart Room Control - Login</title>
+    <title>Login Page</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', sans-serif;
+            font-family: Arial, sans-serif;
         }
 
         body {
-            background: linear-gradient(135deg, #1e3c72, #2a5298);
-            height: 100vh;
             display: flex;
-            align-items: center;
             justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #f0f2f5;
+            padding: 20px;
         }
 
-        .login-container {
-            background: rgba(255, 255, 255, 0.95);
+        .card {
+            background: white;
             padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             width: 100%;
             max-width: 400px;
         }
 
-        .login-header {
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-
-        .login-header h1 {
-            color: #1e3c72;
+        h2 {
+            color: #1a1a1a;
             margin-bottom: 0.5rem;
+            text-align: center;
         }
 
-        .login-header p {
-            color: #666;
-        }
-
-        .form-group {
+        .muted {
+            color: #65676b;
+            text-align: center;
             margin-bottom: 1.5rem;
         }
 
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            color: #333;
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
         }
 
-        .form-group input {
-            width: 100%;
-            padding: 0.8rem;
+        label {
+            color: #444;
+            font-size: 0.9rem;
+            margin-bottom: 0.25rem;
+        }
+
+        input {
+            padding: 12px;
             border: 1px solid #ddd;
-            border-radius: 5px;
+            border-radius: 6px;
             font-size: 1rem;
+            transition: border-color 0.3s;
         }
 
-        .form-group input:focus {
+        input:focus {
             outline: none;
-            border-color: #1e3c72;
+            border-color: #1877f2;
         }
 
-        .login-btn {
-            width: 100%;
-            padding: 1rem;
-            background: #1e3c72;
+        button {
+            background: #1877f2;
             color: white;
+            padding: 12px;
             border: none;
-            border-radius: 5px;
+            border-radius: 6px;
             font-size: 1rem;
+            font-weight: bold;
             cursor: pointer;
-            transition: background 0.3s ease;
-        }
-
-        .login-btn:hover {
-            background: #2a5298;
-        }
-
-        .forgot-password {
-            text-align: center;
             margin-top: 1rem;
+            transition: background 0.3s;
         }
 
-        .forgot-password a {
-            color: #1e3c72;
+        button:hover {
+            background: #166fe5;
+        }
+
+        .links {
+            margin-top: 1.5rem;
+            text-align: center;
+        }
+
+        .links a {
+            color: #1877f2;
             text-decoration: none;
+            display: block;
+            margin: 0.5rem 0;
+            font-size: 0.9rem;
         }
 
-        .forgot-password a:hover {
+        .links a:hover {
             text-decoration: underline;
+        }
+
+        .divider {
+            margin: 1rem 0;
+            border-top: 1px solid #ddd;
         }
     </style>
 </head>
 <body>
-    <div class="login-container">
-        <div class="login-header">
-            <h1>Smart Room Control</h1>
-            <p>Access your smart room settings</p>
-        </div>
-        <form>
+    <div class="card">
+        <h2>Login</h2>
+        <p class="muted">Welcome back</p>
+
+        <form method="post" action="login_process.php">
             <div class="form-group">
-                <label for="username">Username</label>
-                <input type="text" id="username" name="username" required>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
             </div>
+
             <div class="form-group">
                 <label for="password">Password</label>
                 <input type="password" id="password" name="password" required>
             </div>
-            <button type="submit" class="login-btn">Login</button>
+
+            <button type="submit">Login</button>
         </form>
-        <div class="forgot-password">
-            <a href="#">Forgot Password?</a>
+
+        <div class="divider"></div>
+
+        <div class="links">
+            <a href="register.php">Don't have an account? Register</a>
+            <a href="forgot-password.php">Forgot Password?</a>
         </div>
     </div>
 </body>

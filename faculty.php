@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 ?>
 <!DOCTYPE html>
@@ -9,19 +10,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Smart Classroom Management System</title>
+    <title>USJR - Room Management System</title>
     <style>
             #addModal .modal-content {
             margin: 5% auto;
             padding: 20px;
             border: 1px solid #888;
-            width: 60%;
+            width: 40%;
             height: auto;
             }
 
             #editModal .modal-content {
                 margin: 5% auto;
-                padding: 25px;
+                padding: 20px;
                 border: 1px solid #888;
                 width: 40%;
                 height: auto;
@@ -143,7 +144,7 @@
         die("Error executing query: " . $stmt->error);
     }
     
-    
+    // Output table data
     echo "<table id='datatablesSimple' class='table'>
             <thead>  
                 <tr>
@@ -178,7 +179,7 @@
 <script src="js/scripts.js"></script>
 <script src="js/datatables-simple-demo.js"></script>
 
-<!-- ffhi -->
+
 
 
 </body>

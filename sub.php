@@ -1,8 +1,5 @@
 <?php
 
-// Note: The original PHP opening tag was misplaced in the DOCTYPE area,
-// I've kept it concise here as the PHP logic follows later.
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,8 +11,7 @@
     <meta name="author" content="" />
     <title>Smart Classroom Management System</title>
     <style>
-        /* Reverting custom modal sizing to allow Bootstrap's responsiveness, 
-           but retaining the close button style for consistent UI */
+        
         .close {
             color: #aaa;
             font-size: 28px;
@@ -34,7 +30,7 @@
             opacity: 1;
         }
 
-        /* The Simple DataTables CSS is still included for the table look */
+       
     </style>
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
     <link href="css/styles.css" rel="stylesheet" /> 
@@ -77,11 +73,8 @@
                                 die("Error executing query: " . $stmt->error);
                             }
                             
-                            // Replaced custom table styling with Bootstrap classes:
-                            // table-striped: adds zebra-striping
-                            // table-hover: enables a hover state on table rows
-                            // table-bordered: adds borders on all sides
-                            echo "<div class='table-responsive'>"; // Added for better mobile support
+                            
+                            echo "<div class='table-responsive'>"; 
                             echo "<table id='datatablesSimple' class='table table-striped table-hover table-bordered w-100'>"; 
                             echo "      <thead class='table-dark'>  <tr>
                                             <th>Subject ID</th>
@@ -93,7 +86,7 @@
                                     <tbody>";
                             
                             while ($row = $result->fetch_assoc()) {
-                                // Buttons now use Bootstrap's standard look:
+                                
                                 echo "<tr>
                                         <td>" . htmlspecialchars($row["sid"]) . "</td>
                                         <td>" . htmlspecialchars($row["code"]) . "</td>
@@ -107,7 +100,7 @@
                             
                             echo "      </tbody>
                                 </table>";
-                            echo "</div>"; // Close table-responsive
+                            echo "</div>"; 
                             
                             $stmt->close();
                             $conn->close();
@@ -157,9 +150,9 @@
     <script src="js/datatables-simple-demo.js"></script>
 
     <script>
-        // Update the JS functions to correctly open/close Bootstrap 5 Modals
+        
         function addModal() {
-            // Using jQuery to show the Bootstrap modal
+            
             $('#addModal').modal('show');
         }
 
@@ -168,10 +161,7 @@
         }
 
         function openModal(subjectId) {
-            // Your AJAX call to load content into #subupdate goes here
-            // e.g., $('#subupdate').load('fetch_subject.php?sid=' + subjectId, function() {
-            //            $('#editModal').modal('show');
-            //        });
+                    });
             $('#editModal').modal('show'); // Temporarily show it
         }
 

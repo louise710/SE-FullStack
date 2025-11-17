@@ -12,7 +12,7 @@ session_set_cookie_params([
     'samesite' => 'Lax'
 ]);
 
-// Database 
+// Database sample
 $dbHost = '127.0.0.1';
 $dbName = 'softengdb';
 $dbUser = 'louise';

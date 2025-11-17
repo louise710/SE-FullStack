@@ -10,7 +10,7 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>USJR - Room Management System</title>
+    <title>Smart Classroom Management System</title>
     <style>
             #addModal .modal-content {
             margin: 5% auto;

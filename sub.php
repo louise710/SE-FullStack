@@ -56,7 +56,7 @@
                         </div>
                         <div class="card-body">
                             <?php
-                            include 'db.php'; 
+                            // include 'db.php'; tbc
                             
                             $sql = "SELECT * FROM sub";
                             

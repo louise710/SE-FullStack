@@ -198,6 +198,7 @@ if (!isset($_SESSION["username"])) {
                         </div>
                 </div>
         </main>
+        <?php include 'footer.php'; ?>
     </div>
 </div>
 </div>

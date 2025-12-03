@@ -182,7 +182,21 @@ if (!isset($_SESSION["username"])) {
     
     $conn->close();
 ?>
+    </div>
+                    <div id="addModal" class="modal">
+                            <div class="modal-content">
+                                <span class="close" onclick="closeAddModal()">&times;</span>
 
+                                <?php include 'facadd.php'; ?>
+                            </div>
+                        </div>
+                    <div id="editModal" class="modal">
+                            <div class="modal-content">
+                                <span class="close" onclick="closeModal()">&times;</span>
+                                <div id="facupdate"></div>
+                            </div>
+                        </div>
+                </div>
         </main>
     </div>
 </div>

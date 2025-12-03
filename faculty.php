@@ -161,9 +161,19 @@ if (!isset($_SESSION["username"])) {
                 </tr>
             </thead>
             <tbody>";
-    
-
-   
+        while ($row = $result->fetch_assoc()) {
+        $buttonText = ($row["stat"] == 1) ? 'Active' : 'Inactive';
+        $buttonClass = ($row["stat"] == 1) ? 'btn-success' : 'btn-danger';
+        echo "<tr>
+                <td>" . $row["fidno"] . "</td>
+                <td>" . $row["rfid"] . "</td>
+                <td>" . $row["fname"] . "</td>
+                <td>" . $row["lname"] . "</td>
+                <td><button id='statusBtn_" . $row["fid"] . "' class='btn $buttonClass' data-status='" . $row["stat"] . "'>$buttonText</button></td>
+                <td><button class='btn btn-primary btn-sm' onclick=\"openModal({$row['fid']})\">Update</button>
+                <button class='btn btn-danger btn-sm' onclick=\"confirmDelete('{$row['fid']}')\">Delete</button></td>
+              </tr>";
+    }
     
     echo "</tbody>
         </table>";
